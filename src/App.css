@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,9 +24,50 @@
   color: white;
 }
 
+.App-tarjetas {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:420px;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius:15px;
+  font-family: sans-serif;
+}
+
 .App-link {
   color: #61dafb;
 }
+
+/* .product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:280px;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius:15px;
+  font-family: sans-serif;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 @keyframes App-logo-spin {
   from {
