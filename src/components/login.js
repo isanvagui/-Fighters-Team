@@ -15,40 +15,57 @@ function Login() {
         email,
         password
       });
-      // Manejar la respuesta de la API después del inicio de sesión exitoso
       console.log('Token de acceso:', response.data);
-      // Redirigir a la página de inicio o hacer otras acciones necesarias después del inicio de sesión
+
+      localStorage.setItem('accessToken', response.data.token[1]);
+      localStorage.setItem('userInfo', response.data.token[0]);
       navigate('/productList');
     } catch (error) {
-      // Manejar el error en caso de que falle el inicio de sesión
       console.error('Error de inicio de sesión:', error.response.data.message);
       setError('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
     }
   };
 
+  const navigateToLogin = () => {
+    navigate('/');
+};
+
   return (
-    <div className="login-container"> {/* Clase CSS para contenedor principal */}
-      <h2>Iniciar Sesión</h2>
-      {error && <div className="error-message">{error}</div>} {/* Clase CSS para mensaje de error */}
-      <form onSubmit={handleSubmit}>
-        <div className="input-group"> {/* Clase CSS para grupo de entrada */}
-          <label>Correo Electrónico:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="input-group"> {/* Clase CSS para grupo de entrada */}
-          <label>Contraseña:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="login-button">Iniciar Sesión</button> {/* Clase CSS para botón de inicio de sesión */}
-      </form>
+  <div>
+    <div className="navbar">
+      <center>
+        <h2>Acceder</h2>
+      </center>
+      <div className="navbar-buttons">
+          <button onClick={navigateToLogin}>Volver</button>
+      </div>
+    </div>
+    <br></br>
+      <div className="login-container"> 
+        <center>
+          <h2>Iniciar Sesión</h2>
+        </center>
+        {error && <div className="error-message">{error}</div>} 
+        <form onSubmit={handleSubmit}>
+          <div className="input-group"> 
+            <label>Correo Electrónico:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="input-group"> 
+            <label>Contraseña:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="login-button">Iniciar Sesión</button> 
+        </form>
+      </div>
     </div>
   );
 }
