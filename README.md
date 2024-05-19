@@ -40,46 +40,46 @@ El proyecto utiliza una base de datos MongoDB para almacenar los datos. Se defin
 - *updatedAt: Fecha de última actualización del usuario.
 
 # Productos
-*. _id: Identificador único generado por MongoDB.
-*. name: Nombre del producto.
-*. description: Descripción del producto.
-*. url: URL del producto.
-*. tags: Lista de etiquetas o categorías del producto.
-*. userId: Referencia al usuario que publicó el producto.
-*. createdAt: Fecha de creación del producto.
-*. updatedAt: Fecha de última actualización del producto.
+- *_id: Identificador único generado por MongoDB.
+- *name: Nombre del producto.
+- *description: Descripción del producto.
+- *url: URL del producto.
+- *tags: Lista de etiquetas o categorías del producto.
+- *userId: Referencia al usuario que publicó el producto.
+- *createdAt: Fecha de creación del producto.
+- *updatedAt: Fecha de última actualización del producto.
 
 # Reseñas
-*. _id: Identificador único generado por MongoDB.
-*. productId: Referencia al producto asociado a la reseña.
-*. userId: Referencia al usuario que creó la reseña.
-*. content: Contenido de la reseña.
-*. createdAt: Fecha de creación de la reseña.
-*. updatedAt: Fecha de última actualización de la reseña.
+- *_id: Identificador único generado por MongoDB.
+- *productId: Referencia al producto asociado a la reseña.
+- *userId: Referencia al usuario que creó la reseña.
+- *content: Contenido de la reseña.
+- *createdAt: Fecha de creación de la reseña.
+- *updatedAt: Fecha de última actualización de la reseña.
 
-#API
+# API
 La API del proyecto consta de los siguientes endpoints:
 
 # Productos
-*. POST /productos: Crea un nuevo producto.
-*. GET /productos: Busca productos con opciones de filtrado.
-*. GET /productos/:productId: Obtiene detalles de un producto específico.
-*. PUT /productos/:productId: Actualiza un producto existente.
-*. DELETE /productos/:productId: Elimina un producto existente.
-*. Calificaciones
-*. POST /productos/:productId/calificar: Califica un producto.
-*. GET /productos/:productId/calificacion: Obtiene la calificación promedio de un producto.
-*. Reseñas
-*. POST /productos/:productId/resenar: Deja una reseña en un producto.
-*. GET /productos/:productId/resenas: Obtiene todas las reseñas de un producto.
+- *POST /productos: Crea un nuevo producto.
+- *GET /productos: Busca productos con opciones de filtrado.
+- *GET /productos/:productId: Obtiene detalles de un producto específico.
+- *PUT /productos/:productId: Actualiza un producto existente.
+- *DELETE /productos/:productId: Elimina un producto existente.
+- *Calificaciones
+- *POST /productos/:productId/calificar: Califica un producto.
+- *GET /productos/:productId/calificacion: Obtiene la calificación promedio de un producto.
+- *Reseñas
+- *POST /productos/:productId/resenar: Deja una reseña en un producto.
+- *GET /productos/:productId/resenas: Obtiene todas las reseñas de un producto.
 
 # Contribución
 Si deseas contribuir, sigue estos pasos:
 1. Realiza un fork del repositorio.
 2. Crea una nueva rama para tu contribución:
-*. git checkout -b nueva-funcionalidad
+- *git checkout -b nueva-funcionalidad
 3. Realiza los cambios necesarios y haz commit:
-*. git commit -am 'Agrega nueva funcionalidad'
+- *git commit -am 'Agrega nueva funcionalidad'
 4. Sube los cambios a tu fork:
-*. git push origin nueva-funcionalidad
+- *git push origin nueva-funcionalidad
 5. Crea una solicitud de extracción en GitHub.
