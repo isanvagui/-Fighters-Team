@@ -18,12 +18,9 @@ así como ver detalles y calificaciones promedio.
 2. Inicia sesión con tus credenciales.
 3. Crea nuevos productos proporcionando la información requerida.
 4. Busca productos por nombre, descripción, etiquetas, URL o calificación.
-   
-5 .Califica y deja reseñas en los productos que desees.
-
-6 .Consulta los detalles de un producto, incluyendo calificaciones y reseñas asociadas.
-
-7 .Edita o elimina tus propios productos.
+5. Califica y deja reseñas en los productos que desees.
+6. Consulta los detalles de un producto, incluyendo calificaciones y reseñas asociadas.
+7. Edita o elimina tus propios productos.
 
 # Arquitectura
 El proyecto sigue una arquitectura basada en React  para el frontend y utiliza Bootstrap para el diseño y Node.js 
