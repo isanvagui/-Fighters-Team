@@ -30,14 +30,14 @@ con MongoDB para el backend, utilizando Express para el servidor y Mongoose para
 El proyecto utiliza una base de datos MongoDB para almacenar los datos. Se definen los siguientes modelos:
 
 # Usuarios
-*. _id: Identificador único generado por MongoDB.
-*. username: Nombre de usuario único.
-*. email: Dirección de correo electrónico del usuario.
-*. password: Contraseña del usuario (se recomienda almacenarla de forma segura, como un hash).
-*. bio: Biografía o descripción del usuario.
-*. avatar: URL de la imagen de perfil del usuario.
-*. createdAt: Fecha de creación del usuario.
-*. updatedAt: Fecha de última actualización del usuario.
+- *_id: Identificador único generado por MongoDB.
+- *username: Nombre de usuario único.
+- *email: Dirección de correo electrónico del usuario.
+- *password: Contraseña del usuario (se recomienda almacenarla de forma segura, como un hash).
+- *bio: Biografía o descripción del usuario.
+- *avatar: URL de la imagen de perfil del usuario.
+- *createdAt: Fecha de creación del usuario.
+- *updatedAt: Fecha de última actualización del usuario.
 
 # Productos
 *. _id: Identificador único generado por MongoDB.
