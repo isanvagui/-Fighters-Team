@@ -15,20 +15,22 @@ function Login() {
         email,
         password
       });
+      // Manejar la respuesta de la API después del inicio de sesión exitoso
       console.log('Token de acceso:', response.data);
 
+      // Almacenar el token de acceso en el almacenamiento local del navegador
       localStorage.setItem('accessToken', response.data.token[1]);
       localStorage.setItem('userInfo', response.data.token[0]);
+      localStorage.setItem('username', response.data.token[0].username);
+      localStorage.setItem('userId', response.data.token[0]._id);
+      // Redirigir a la página productList o hacer otras acciones necesarias después del inicio de sesión
       navigate('/productList');
     } catch (error) {
+      // Manejar el error en caso de que falle el inicio de sesión
       console.error('Error de inicio de sesión:', error.response.data.message);
       setError('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
     }
   };
-
-  const navigateToLogin = () => {
-    navigate('/');
-};
 
   return (
   <div>
@@ -36,9 +38,6 @@ function Login() {
       <center>
         <h2>Acceder</h2>
       </center>
-      <div className="navbar-buttons">
-          <button onClick={navigateToLogin}>Volver</button>
-      </div>
     </div>
     <br></br>
       <div className="login-container"> 

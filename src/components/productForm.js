@@ -10,7 +10,8 @@ function ProductForm () {
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
   const [tags, setTags] = useState('');
-  const [username, setUsername] = useState(''); 
+  const username = localStorage.getItem('username');
+  // const [username, setUsername] = useState(''); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -20,10 +21,12 @@ function ProductForm () {
         name,
         description,
         url,
-        tags: tags.split(','), 
-        username
+        tags: tags.split(','),
+        username: username
       });
       console.log('Producto creado:', response.data);
+
+      navigate('/productList');
     } catch (error) {
       console.error('Error al crear el producto:', error.response.data.message);
     }
@@ -64,10 +67,10 @@ function ProductForm () {
             <label>Etiqueta:</label>
             <input type="text" value={tags} onChange={(e) => setTags(e.target.value)} />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Nombre Usuario:</label>
             <textarea value={username} onChange={(e) => setUsername(e.target.value)} />
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-dark w-100">Crear Producto</button>
         </form>
       </div>

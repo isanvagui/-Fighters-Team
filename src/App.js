@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
 import ProductList from './components/productList';
 import UserProfile from './components/userProfile';
+import ProfilesUsers from './components/profilesUsers';
 import ProductProfile from './components/productProfile';
 import ProductForm from './components/productForm';
 import ProductQualification from './components/productQualification';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/userProfile" element={<UserProfile />} />
+        <Route path="/profilesUsers" element={<ProfilesUsers />} />
         <Route path="/productProfile/:id" element={<ProductProfile />} />
         <Route path="/productForm" element={<ProductForm />} />
         <Route path="/productQualification" element={<ProductQualification />} />
