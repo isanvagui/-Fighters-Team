@@ -30,7 +30,7 @@ function ProductProfile() {
     try {
       const response = await axios.post('http://localhost:3001/api/v1/review/new/', {
         productId: id,
-        userId: localStorage.getItem('userId'),
+        userId: userId,
         rate: parseInt(rate),
         content
       });
@@ -113,7 +113,7 @@ function ProductProfile() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-dark w-100">Enviar</button> {/* Botón con color negro */}
+              <button type="submit" className="btn btn-dark w-100">Enviar</button> 
             </form>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import { unstable_ClassNameGenerator } from '@mui/material';
 
 function ProductsCreateQualification() {
     const [latestProduct, setLatestProducts] = useState(null);
@@ -23,6 +24,8 @@ function ProductsCreateQualification() {
             const sortedProducts = products.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
             const latestProduct = sortedProducts.slice(0, 5);
             setLatestProducts(latestProduct);
+            console.log("latest")
+            console.log(latestProduct)
         } catch (error) {
             console.error('Error al obtener el último producto:', error);
         }
@@ -53,7 +56,7 @@ function ProductsCreateQualification() {
                                 <div className="card-body d-flex flex-column align-items-center">
                                     <p className="card-text">Descripción: {product.description}</p>
                                     <p className="card-text">Etiquetas: {product.tags.join(', ')}</p>
-                                    <p className="card-text">Calificación: {product.rateAverage}</p>
+                                    {/* <p className="card-text">Calificación: {product.rateAverage}</p> */}
                                     <p className="card-text">Fecha: {new Date(product.createdAt).toLocaleDateString()}</p>
                                 </div>
                             </div>

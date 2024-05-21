@@ -57,6 +57,14 @@ function ProductList() {
     navigate(`/productProfile/${id}`);
   };
 
+  const handleLogout = () => {
+    // Elimina la información de la sesión
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('userId');
+    // Redirigir a la página de login
+    navigate('/');
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -74,7 +82,10 @@ function ProductList() {
                 <button className="nav-link btn btn-link" onClick={() => navigate('/productQualification')}>Mejores productos</button>
               </li>
               <li className="nav-item">
-                <button className="nav-link btn btn-link" onClick={() => navigate('/productForm')}>Publicar producto</button>
+                <button className="nav-link btn btn-link" onClick={() => navigate('/productForm')}>Crear producto</button>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link btn btn-link" onClick={() => navigate('/profilesUsers')}>Usuarios</button>
               </li>
               <li className="nav-item">
                 <button className="nav-link btn btn-link" onClick={() => navigate('/userProfile')}>Perfil usuario</button>
@@ -82,6 +93,7 @@ function ProductList() {
             </ul>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar" value={searchTerm} onChange={handleSearchChange} />
+              <button className="btn btn-outline-light" type="button" onClick={handleLogout}>Cerrar sesión</button>
             </form>
           </div>
         </div>
