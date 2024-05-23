@@ -120,7 +120,7 @@ function ProductList() {
                     ))}
                   </div>
                   <p className="card-text">Fecha de creación: {new Date(product.createdAt).toLocaleDateString()}</p>
-                  <a href="https://www.rocotorestaurante.com/pedidos/" className="btn btn-dark mt-auto" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.producthunt.com/categories/apps-for-kids" className="btn btn-dark mt-auto" target="_blank" rel="noopener noreferrer">
                     Comprar
                   </a>
                 </div>
