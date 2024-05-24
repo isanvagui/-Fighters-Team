@@ -1,7 +1,7 @@
 # Documentación del Proyecto
 # Introducción
 El proyecto es una aplicación para gestionar productos y reseñas asociadas a los mismos. 
-Permite a los usuarios seguir a otros y tener segudores. Crear productos, busca productos, califica y reseña productos, 
+Permite a los usuarios seguir a otros y tener seguidores, permite crear nuevos productos, buscar productos, calificar y reseñar productos, 
 así como ver detalles y calificaciones promedio.
 
 # Instalación
@@ -19,10 +19,9 @@ así como ver detalles y calificaciones promedio.
 3. Busca productos por nombre, descripción, etiquetas, calificación o fecha.
 4. Califica y deja reseñas en los productos que desees.
 5. Consulta los detalles de un producto, incluyendo calificaciones y reseñas asociadas.
-6. Edita o elimina tus propios productos.
-7. Muestra mejores producto calificados
-8. Muestra los ultimos productos ingresados
-9. Muestra los usuarios seguidos y seguidores en el perfil del usuario
+6. Muestra mejores producto calificados
+7. Muestra los ultimos productos ingresados
+8. Muestra los usuarios seguidos y seguidores en el perfil del usuario
 
 # Arquitectura
 El proyecto sigue una arquitectura basada en React  para el frontend y utiliza Bootstrap para el diseño y Node.js 
