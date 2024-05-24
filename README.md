@@ -5,7 +5,7 @@ Permite a los usuarios seguir a otros y tener seguidores, permite crear nuevos p
 así como ver detalles y calificaciones promedio.
 
 # Instalación
-1. Clona el repositorio desde GitHub:git clone https://github.com/KevinGuzmanY/Software2
+1. Clona el repositorio desde GitHub:git clone https://github.com/isanvagui/-Fighters-Team
 2. Instala las dependencias del proyecto:npm install
 3. Instalar la libreria react-router-dom para la gestión de rutas
 4. Instala la biblioteca JWT para decodificar token
