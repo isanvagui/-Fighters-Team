@@ -108,7 +108,7 @@ input[type="password"] {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #0b0b0b;
   color: #fff;
   cursor: pointer;
 }
@@ -203,6 +203,11 @@ button[type="submit"]:hover {
   width: 100%;
   height: auto; /* Esto asegura que la imagen mantenga su proporción original */
   max-width: 300px; /* Puedes ajustar esto según tus necesidades */
+}
+
+.correo {
+  justify-content: center; /*con esto centramos a todos los items de manera horizonal*/
+  align-items: center; /*con esto centramos de manera vertical*/
 }
 
 

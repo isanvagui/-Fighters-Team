@@ -37,7 +37,6 @@ function ProductForm () {
 };
 
   return (
-
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
@@ -67,10 +66,6 @@ function ProductForm () {
             <label>Etiqueta:</label>
             <input type="text" value={tags} onChange={(e) => setTags(e.target.value)} />
           </div>
-          {/* <div className="form-group">
-            <label>Nombre Usuario:</label>
-            <textarea value={username} onChange={(e) => setUsername(e.target.value)} />
-          </div> */}
           <button type="submit" className="btn btn-dark w-100">Crear Producto</button>
         </form>
       </div>

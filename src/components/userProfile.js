@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'; //libreria de solicitudes
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function UserProfile() {
   const [user, setUser] = useState(null);
   const [followedUsers, setFollowedUsers] = useState([]);
-  const [followers, setFollowers] = useState([]); // Nuevo estado para los seguidores
+  const [followers, setFollowers] = useState([]); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,7 +58,7 @@ function UserProfile() {
 
   const handleUnfollow = async (userToUnfollowId) => {
     try {
-      const userId = user.userId; // ID del usuario autenticado
+      const userId = user.userId;
       await axios.post(`http://localhost:3001/api/v1/security/unfollow/${userId}`, {
         userToUnfollowId
       });
@@ -80,38 +80,46 @@ function UserProfile() {
           <button className="btn btn-outline-light" onClick={() => navigate('/productList')}>Volver</button>
         </div>
       </nav>
-      <div className="container d-flex justify-content-center">
-        <div className="card text-center" style={{ width: 'auto' }}>
-          <div className="card-header">
-            <h5 className="card-title">{user.username}</h5>
+      <div className="container">
+        <div className="row mb-4">
+          <div className="col-md-4 mb-0">
+            <div className="card h-100">
+              <div className="card-img-top-container">
+                <img src={user.avatar} className="img-fluid card-img-top" alt={user.username} />
+              </div>
+            </div>
           </div>
-          <img 
-            src={user.avatar} 
-            className="img-fluid card-img-top mx-auto" 
-            alt={user.username} 
-            style={{ height: 'auto', maxWidth: '100%' }} 
-          />
-          <div className="card-body d-flex flex-column align-items-center">
-            <p className="card-text">Correo electrónico: {user.email}</p>
-            <p className="card-text">Biografía: {user.bio}</p>
+          <div className="col-md-6">
+            <div className="card h-100 text-center">
+              <div className="card-body d-flex flex-column justify-content-center">
+                <h2 className="card-title">{user.username}</h2>
+                <p className="card-text">Correo electrónico: {user.email}</p>
+                <p className="card-text">Biografía: {user.bio}</p>
+                <div className="mt-3"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>  
       <div className="container mt-4">
-        <h3>Usuarios Seguidos</h3>
+        <center>
+          <h3>Seguidos</h3>
+        </center>
+         <br></br> {/* para espacios */}
         <div className="row">
           {followedUsers.map(followedUser => (
-            <div key={followedUser._id} className="col-md-4 mb-3">
-              <div className="card">
-                <div className="card-header">
+            <div key={followedUser._id} className="col-md-4 mb-4">
+              <div className="card card h-100 text-center">
+                <div className="container d-flex justify-content-center">
                   <h5 className="card-title">{followedUser.username}</h5>
                 </div>
                 <img 
                   src={followedUser.avatar} 
-                  className="card-img-top" 
+                  className="img-fluid card-img-top mx-auto" 
                   alt={followedUser.username} 
+                  style={{ objectFit: 'cover', height: '200px' }} 
                 />
-                <div className="card-body">
+                <div className="card-body d-flex flex-column align-items-center">
+                  <p className="card-text">{followedUser.email}</p>
                   <p className="card-text">{followedUser.bio}</p>
                   <button className="btn btn-danger" onClick={() => handleUnfollow(followedUser._id)}>Dejar de seguir</button>
                 </div>
@@ -121,26 +129,32 @@ function UserProfile() {
         </div>
       </div>
       <div className="container mt-4">
-        <h3>Seguidores</h3>
+        <center>
+          <h3>Seguidores</h3>
+        </center>
+        <br></br> {/* para espacios */}
         <div className="row">
           {followers.map(follower => (
-            <div key={follower._id} className="col-md-4 mb-3">
-              <div className="card">
-                <div className="card-header">
+            <div key={follower._id} className="col-md-4 mb-4">
+              <div className="card card h-100 text-center">
+                <div className="container d-flex justify-content-center">
                   <h5 className="card-title">{follower.username}</h5>
                 </div>
                 <img 
                   src={follower.avatar} 
-                  className="card-img-top" 
+                  className="img-fluid card-img-top mx-auto"  
                   alt={follower.username} 
+                  style={{ objectFit: 'cover', height: '200px' }} 
                 />
-                <div className="card-body">
+                <div className="card-body d-flex flex-column align-items-center">
+                  <p className="card-text">{follower.email}</p>
                   <p className="card-text">{follower.bio}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

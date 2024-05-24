@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { unstable_ClassNameGenerator } from '@mui/material';
 
 function ProductsCreateQualification() {
     const [latestProduct, setLatestProducts] = useState(null);
