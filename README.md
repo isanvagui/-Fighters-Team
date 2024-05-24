@@ -16,7 +16,7 @@ así como ver detalles y calificaciones promedio.
 # Uso
 1. Inicia sesión con tus credenciales.
 2. Crea nuevos productos proporcionando la información requerida.
-3. Busca productos por nombre, descripción, etiquetas, URL o calificación.
+3. Busca productos por nombre, descripción, etiquetas, calificación o fecha.
 4. Califica y deja reseñas en los productos que desees.
 5. Consulta los detalles de un producto, incluyendo calificaciones y reseñas asociadas.
 6. Edita o elimina tus propios productos.
